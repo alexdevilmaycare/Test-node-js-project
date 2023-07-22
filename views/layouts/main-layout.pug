@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageTitle}
+        link(rel="stylesheet", href="/css/main.css")
+        block styles
+    body
+        header.main_header
+            nav.main_header_nav 
+                ul.main_header_nav_list 
+                    li.main_header_nav_list_item
+                        a.main_header_nav_list_item_ref(href="/add_user") Add user
+                    li.main_header_nav_list_item 
+                        a.main_header_nav_list_item_ref(href='/user_list') List of users
+        block pagespecific_content 
+
+                     

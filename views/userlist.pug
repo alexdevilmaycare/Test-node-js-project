@@ -1,0 +1,20 @@
+extends layouts/main-layout.pug
+block styles
+    link(rel="stylesheet", href="/css/userlist.css")
+block pagespecific_content
+    main.user_list 
+        if userlist.length > 0
+            ul.usercontainer 
+                each user in userlist
+                    li.usernamecontainer 
+                        -var fname = user.firstName;
+                        -var lname = user.lastName; 
+                        -var fullname = fname + ' ' + lname; 
+                        p #{fullname};
+                        -var uID = user.id
+                        -var pathstart = '/indivuser/'
+                        -var fullpath = pathstart + uID;
+                        .ind_user_page
+                            a(href=fullpath target="_blank") View 
+        else
+            h1 No users have been added so far

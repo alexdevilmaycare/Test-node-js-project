@@ -1,0 +1,17 @@
+extends layouts/main-layout.pug
+block styles
+    link(rel="stylesheet", href="/css/form.css")
+block pagespecific_content
+    main.form_main
+        form.add_user_form(action="/newUsers" method = "POST")
+            .inputs_container
+                label(for="firstName") Enter a new user
+                input(for="firstName" type="text" name="firstName" placeHolder="New user")
+            .inputs_container
+                label(for="lastName") Enter a new user
+                input(for="lastName" type="text" name="lastName" placeHolder="Your last name")
+            .inputs_container
+                label(for="description")
+                textarea(name="description" cols="30" rows="10")  
+            input(type="submit" value="Submit") 
+
